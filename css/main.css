@@ -223,6 +223,7 @@ nav.navbar,
   color: #fff;
   font-size: 18px;
   font-weight: 300;
+  text-align: center;
 }
 
 .carousel-caption p:before,
@@ -452,6 +453,7 @@ top: -8px;
 
 #facts {
 	background-image: url("../img/parallax/city.jpg");
+  height: 900px;
 	background-color: rgba(6,32,51,.8);
 	background-attachment: fixed !important;
 	background-position: center center;
