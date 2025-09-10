@@ -2,11 +2,36 @@
 /*	Preloader
 /* ========================================================================= */
 
-jQuery(window).load(function(){
+(function ($) {
 
-	$("#preloader").fadeOut("slow");
+  var MIN_SHOW_MS = 400;
+  var start = Date.now();
 
-});
+  function hidePreloader() {
+    var elapsed = Date.now() - start;
+    var wait = Math.max(0, MIN_SHOW_MS - elapsed);
+    setTimeout(function () {
+      var $p = $("#preloader");
+      if ($p.length) {
+
+        $p.addClass("fade-out");
+
+        setTimeout(function () { $p.remove(); }, 700);
+
+        $("body").css("overflow", "");
+      }
+    }, wait);
+  }
+
+  $(window).on("load", hidePreloader);
+
+  setTimeout(hidePreloader, 10000);
+
+  $(function () {
+    $("body").css("overflow", "hidden");
+  });
+})(jQuery);
+/* ========================================================================= */
 
 
 $(document).ready(function(){

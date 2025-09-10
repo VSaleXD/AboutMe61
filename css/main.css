@@ -124,18 +124,19 @@ body > section,
 }
 
 #preloader {
-  background-color: #fff;
-  height: 100%;
-  position: fixed;
-  width: 100%;
+  position: fixed; inset: 0;
+  background: #0f172a; /* gelap, cocok sama tema & GIF */
+  display: flex; align-items: center; justify-content: center;
   z-index: 1100;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+#preloader img { 
+  width: 320px; max-width: 90%; height: auto;
+}
+#preloader.fade-out {
+  opacity: 0; visibility: hidden;
 }
 
-#preloader > img {
-  left: 47%;
-  position: absolute;
-  top: 48%;
-}
 
 
 /*=========================================
